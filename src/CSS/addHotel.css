@@ -4,23 +4,22 @@
    background-color: rgb(247, 241, 241);
    height: 700px;
    width: 800px;
-   margin-right: 50%;
-   margin-left: 20%;
+   /* margin-right: 20%; */
+   margin-left: 5%;
    margin-top: 300px;
-   padding: 250px; 
+   padding: 150px; 
 }
-.fields{
-    justify-content: center;
-    align-items: center;
-    
-}
+
 .hotelDetails{
     background-color: black;
     color: cadetblue;
     width: 600px;
     height: 70px;
     font-size: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-left: -50px;
+    
+   
 }
 .btnAdd{
         background-color: black;
@@ -28,9 +27,69 @@
         width: 600px;
         height: 70px;
         font-size: 20px;
+        margin-left: -50px;
 }
 .heading{
     font-size: 40px;
     margin-left: 40%;
     align-items: center;
+}
+.output{
+    display: flex;
+    width: 1800px;
+    height: 1200px;
+    background-color:rgb(148, 145, 145) ;
+    /* border: 2px solid black; */
+    margin-left: 950px;
+    margin-top: -700px;
+    
+}
+.results{
+    display: flex;
+    border: 1px solid green;
+    margin-top: 100px;
+    margin-bottom: 750px;
+}
+.picture{
+    width: 250px;
+    height: 250px;
+    margin-top: 50px;
+    margin-left: 50px;
+    background-image: url(../../public/hotel3.jfif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.Description{
+  width: 350px;
+  height: 350px;
+  margin-top: 120px;
+  margin-left: 190px;
+}
+h2{
+    
+    color: rgb(249, 252, 251);
+    font-size: 20px;
+}
+.Buttons{
+    width: 350px;
+    height: 350px;
+    margin-left: 110px;
+    margin-top: 120px;
+}
+.btn1{
+    width: 200px;
+    height: 70px;
+    font-size: 20px;
+    background-color: black;
+    color: cadetblue;
+    margin-bottom: 15px;
+}
+.btn2{
+    width: 200px;
+    height: 70px;
+    font-size: 20px;
+    background-color: black;
+    color: cadetblue;
+    margin-bottom: 15px;
 }
