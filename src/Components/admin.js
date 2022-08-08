@@ -47,10 +47,10 @@ function Admin(){
               hotels.map((hotel)=>(
                 
                   <div className='cards'>
-                <img src='hotel4.jpg' alt='hotel1' className='img' />
+                <img src={hotel.image} alt='hotel1' className='img' />
                 <span>{hotel.name}</span><br></br>
                 <span>{hotel.location}</span><br></br>
-                <span>{hotel.description}</span>
+                {/* <span>{hotel.description}</span> */}
                 <span>{hotel.amount}</span>
               </div>
                  

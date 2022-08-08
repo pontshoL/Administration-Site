@@ -1,47 +1,44 @@
 import '../CSS/addHotel.css'
+import '../CSS/admin.css'
 import { db, storage } from '../Config/firebase'
 import React, { useEffect, useState } from 'react';
-import { addDoc, collection, deleteDoc, getDocs, doc } from 'firebase/firestore';
-import { useNavigate } from "react-router-dom";
-import { ref, uploadBytesResumable, getDownloadURL, storageRef } from 'firebase/storage'
+import { addDoc, collection, deleteDoc, getDocs, doc, updateDoc } from 'firebase/firestore';
+import { useNavigate, useParams } from "react-router-dom";
+import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { async } from '@firebase/util';
 
 
-function AddHotel() {
+
+function UpdateHotel() {
     const [hotelName, setHotelName] = useState("")
     const [hotelLocation, setHotelLocation] = useState("")
     const [hotelDescription, setHotelDescription] = useState("")
     const [hotelAmount, setHotelAmount] = useState("")
     const addHotelRef = collection(db, 'hotel')
     const navigate = useNavigate()
-
-
     
+    let param=useParams();
+    let hotID=''
+    hotID=JSON.stringify(param.id);
+
+    const hID=hotID.substring(1,21)
     const [form, setForm] = useState({
       
         image: "",
 
     });
 
-    
-    
+
 
 const handleImage = (e) => {
-
-  
-        setForm( {...form,image:e.target.files[0]})
- 
-   
+    setForm( {...form,image:e.target.files[0]});
   };
 
-  
 
-
-const addHotel = () => {
+const updateHotel = () => {
     const storageRef = ref(
         storage,
         `/images/${Date.now()}${form.image.name}`
@@ -62,24 +59,22 @@ const addHotel = () => {
                 image: "",
             });
             getDownloadURL(uploadImage.snapshot.ref).then((url) => {
-                console.log(url)
-                const collectionRef = collection(db, "hotel");
+                const hotelDoc = doc(db, "hotel", param.id);
                 const hotel={                    
                     name: hotelName,
                     location: hotelLocation,
                     description: hotelDescription,
                      amount: hotelAmount,
-                    image: url,
-
+                    image: url
                      
                 };
-                addDoc(collectionRef, hotel)
+                updateDoc(hotelDoc, hotel)
                     .then(() => {
-                        alert("Hotel added successfully", { type: "success" });
+                        alert("Hotel updated successfully", { type: "success" });
 
                     })
                     .catch((err) => {
-                        alert("Error adding hotel", { type: "error" });
+                        alert("Error updating hotel", { type: "error" });
                     });
             });
         }
@@ -95,39 +90,18 @@ const addHotel = () => {
         let data = await getDocs(collection(db, "hotel"))
         setHotels(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
     }
-
+    
+    
 
     useEffect(() => {
-
-
-
         getData()
-
-
+        
     }, [])
     // console.log("hotels", hotels);
-
-    //delete function
-    function deleteHotel(id) {
-        const getDoc = doc(db, 'hotel', id)
-        deleteDoc(getDoc).then(() => {
-            alert('deleted successfully')
-        }).catch(err => {
-            console.log(err)
-        })
-
-    }
-
-    const handleUpdate= (id)=>{
-        navigate(`/update/${id}`) 
-    }
-
-
-  
     return (
         <div>
             <div className='main'>
-              <Navbar bg="dark" variant="dark">
+            <Navbar bg="dark" variant="dark">
                 <Container className='container1'>
                   <Nav className="me-auto">
                     
@@ -141,7 +115,7 @@ const addHotel = () => {
                   </Nav>
                 </Container>
               </Navbar>
-            </div>
+              </div>
             <p className='heading'>HOTEL DETAILS</p>
 
             <div className='form'>
@@ -149,30 +123,12 @@ const addHotel = () => {
                 <input className='hotelDetails' type="text" placeholder="Location" onChange={(e) => setHotelLocation(e.target.value)} /><br></br>
                 <input className='hotelDetails' type="text" placeholder="Description" onChange={(e) => setHotelDescription(e.target.value)} /><br></br>
                 <input className='hotelDetails' type="number" placeholder="Amount" onChange={(e) => setHotelAmount(e.target.value)} /><br></br>
-                <input type="file"  accept="image/*" onChange={(e)=> {handleImage(e)}}/>
-                <button className='btnAdd' onClick={(e) => { addHotel() }}>ADD</button>
+                <input type="file"  accept="image/*" onChange={handleImage}/>
+                <button className='btnAdd' onClick={(e) => { updateHotel() }}>UPDATE</button>
             </div>
-            {hotels.map((hotel,id) => (
-                <div className='output' key={id}>
-                    <div className='results'>
-                        <div className='picture'>
-                            <img className='hotelImage' src={hotel.image} alt="picture" />
-                        </div>
-                        <div className='Description'>
-                            <h2>{hotel.name}<br></br>{hotel.location}<br></br>{hotel.description}<br></br>{hotel.amount}</h2>
-                        </div>
-                        <div className='Buttons'>
-                            <button className='btn1' onClick={(e)=>handleUpdate(hotel.id)}>Update</button><br></br>
-                            <button className='btn2' onClick={(e) => { deleteHotel(hotel.id) }}>Delete</button>
-                        </div>
-
-
-                    </div>
-                </div>
-            ))}
-
+            
         </div>
     )
 }
 
-export default AddHotel;
+export default UpdateHotel;

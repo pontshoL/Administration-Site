@@ -48,22 +48,22 @@
     display: flex;
     border: 1px solid green;
     margin-top: 100px;
-    margin-bottom: 750px;
+    margin-bottom: 650px;
 }
 .picture{
     width: 250px;
     height: 250px;
     margin-top: 50px;
     margin-left: 50px;
-    background-image: url(../../public/hotel3.jfif);
+    /* background-image: url(../../public/hotel3.jfif);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: cover; */
 }
 .Description{
-  width: 350px;
-  height: 350px;
-  margin-top: 120px;
+  width: 830px;
+  height: 650;
+  margin-top: 8px;
   margin-left: 190px;
 }
 h2{
@@ -92,4 +92,10 @@ h2{
     background-color: black;
     color: cadetblue;
     margin-bottom: 15px;
+}
+.hotelImage{
+   height: 300px;
+   margin-top: -30px;
+   margin-left: -15px;
+   width: 400px;
 }
