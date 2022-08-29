@@ -31,28 +31,32 @@ function Admin(){
                 <Container className='container1'>
                   <Nav className="me-auto">
                     <div className='home'>
-                      <Nav.Link href="#home">Home</Nav.Link>
+                      <Nav.Link href="home">Home</Nav.Link>
                     </div>
-                    <Nav.Link href="#Bookings">Bookings</Nav.Link>
+                    <Nav.Link href="Bookings">Bookings</Nav.Link>
                     <Nav.Link href="#Contact">Contact</Nav.Link>
                     <Nav.Link href="add-room">Manage</Nav.Link>
+                    <Nav.Link href="add-room">Profile</Nav.Link>
                   </Nav>
                 </Container>
               </Navbar>
             </div>
              
-         
+             
             <div className='div-cards'>
             {
               hotels.map((hotel)=>(
                 
-                  <div className='cards'>
+                <div className='wrap'>
+                <div className='cards'>
                 <img src={hotel.image} alt='hotel1' className='img' />
                 <span>{hotel.name}</span><br></br>
                 <span>{hotel.location}</span><br></br>
                 {/* <span>{hotel.description}</span> */}
                 <span>{hotel.amount}</span>
               </div>
+                </div>
+                
                  
               ))
             }

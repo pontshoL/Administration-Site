@@ -15,6 +15,7 @@ function AddHotel() {
     const [hotelName, setHotelName] = useState("")
     const [hotelLocation, setHotelLocation] = useState("")
     const [hotelDescription, setHotelDescription] = useState("")
+    const [altDesc, setAltDesc] = useState("")
     const [hotelAmount, setHotelAmount] = useState("")
     const addHotelRef = collection(db, 'hotel')
     const navigate = useNavigate()
@@ -22,7 +23,7 @@ function AddHotel() {
 
     
     const [form, setForm] = useState({
-      
+                                                                            
         image: "",
 
     });
@@ -68,6 +69,7 @@ const addHotel = () => {
                     name: hotelName,
                     location: hotelLocation,
                     description: hotelDescription,
+                    alternativeDesc: altDesc,
                      amount: hotelAmount,
                     image: url,
 
@@ -126,7 +128,7 @@ const addHotel = () => {
   
     return (
         <div>
-            <div className='main'>
+            <div className='main2'>
               <Navbar bg="dark" variant="dark">
                 <Container className='container1'>
                   <Nav className="me-auto">
@@ -144,10 +146,11 @@ const addHotel = () => {
             </div>
             <p className='heading'>HOTEL DETAILS</p>
 
-            <div className='form'>
+            <div className='form2'>
                 <input className='hotelDetails' type="text" placeholder="Hotel Name" onChange={(e) => setHotelName(e.target.value)} /><br></br>
                 <input className='hotelDetails' type="text" placeholder="Location" onChange={(e) => setHotelLocation(e.target.value)} /><br></br>
                 <input className='hotelDetails' type="text" placeholder="Description" onChange={(e) => setHotelDescription(e.target.value)} /><br></br>
+                <input className='hotelDetails' type="text" placeholder="Alternative Description" onChange={(e) => setAltDesc(e.target.value)} /><br></br>
                 <input className='hotelDetails' type="number" placeholder="Amount" onChange={(e) => setHotelAmount(e.target.value)} /><br></br>
                 <input type="file"  accept="image/*" onChange={(e)=> {handleImage(e)}}/>
                 <button className='btnAdd' onClick={(e) => { addHotel() }}>ADD</button>

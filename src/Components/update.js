@@ -1,5 +1,6 @@
 import '../CSS/addHotel.css'
 import '../CSS/admin.css'
+import '../CSS/update.css'
 import { db, storage } from '../Config/firebase'
 import React, { useEffect, useState } from 'react';
 import { addDoc, collection, deleteDoc, getDocs, doc, updateDoc } from 'firebase/firestore';
@@ -118,7 +119,7 @@ const updateHotel = () => {
               </div>
             <p className='heading'>HOTEL DETAILS</p>
 
-            <div className='form'>
+            <div className='form2'>
                 <input className='hotelDetails' type="text" placeholder="Hotel Name" onChange={(e) => setHotelName(e.target.value)} /><br></br>
                 <input className='hotelDetails' type="text" placeholder="Location" onChange={(e) => setHotelLocation(e.target.value)} /><br></br>
                 <input className='hotelDetails' type="text" placeholder="Description" onChange={(e) => setHotelDescription(e.target.value)} /><br></br>
