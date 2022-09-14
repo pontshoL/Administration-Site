@@ -38,7 +38,6 @@ function Bookings(){
                       <div className='home'>
                     <Nav.Link href="Bookings">Bookings</Nav.Link>
                     </div>
-                    <Nav.Link href="#Contact">Contact</Nav.Link>
                     <Nav.Link href="add-room">Manage</Nav.Link>
                     
                   </Nav>

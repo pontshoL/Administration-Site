@@ -2,8 +2,9 @@ import {createUserWithEmailAndPassword} from 'firebase/auth'
 import { useNavigate } from "react-router-dom";
 import {auth, storage} from '../Config/firebase'
 import React,{useState} from 'react'
-import '../CSS/login.css'
+import '../CSS/signUp.css'
 import {db} from '../Config/firebase'
+import { Link } from 'react-router-dom'
 import {addDoc, collection} from 'firebase/firestore'
 import { ref, uploadBytesResumable, getDownloadURL, storageRef } from 'firebase/storage'
 
@@ -86,18 +87,19 @@ function SignUp(){
     })
 
     return(
-        <div className='main1'>
-        <div className='form' >
-            <div className='imge'>
+        <div className='mainSignUp'>
+        <div className='formSignUp' >
+            <div className='signImge'>
                 {/* <img src='logo.jfif' alt='image'/> */}
             </div>
             <h1 style={{color:"white", paddingBottom:100}}>Sign Up</h1>
                 <input type="text" placeholder="Name" className='input' onChange={((e) => setName(e.target.value))}/>
                 <input type="text" placeholder="Surname" className='input' onChange={((e) => setSurname(e.target.value))}/>
-                <input type="email" placeholder="Email" className='input' onChange={((e) => setEmail(e.target.value))} /><br></br>
-                <input type="password" placeholder="Password" className='input' onChange={((e) => setPassword(e.target.value))} /><br></br>
-                <input type="file"  accept="image/*" onChange={(e)=> {handleImage(e)}}/>
+                <input type="email" placeholder="Email" className='input' onChange={((e) => setEmail(e.target.value))} />
+                <input type="password" placeholder="Password" className='input' onChange={((e) => setPassword(e.target.value))} />
+                {/* <input type="file"  accept="image/*" onChange={(e)=> {handleImage(e)}}/> */}
                 <button id='btn' onClick={Register}>Sign Up</button>
+                <span className='createAcc'>Already have an Account?<Link to="/">SignIn</Link></span>
                 
         </div>
 

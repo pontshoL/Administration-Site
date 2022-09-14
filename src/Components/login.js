@@ -24,15 +24,12 @@ function Login() {
 
     }
     return (
-        <div className='main1'>
-                    <div className='form'>
-                        <div className='imge'></div>
+        <div className='mainLogin'>
+                    <div className='formLogin'>
+                        <div className='loginImge'></div>
                         <h1 style={{color:"white", paddingBottom:100}}>Sign In</h1>
                             <input type={'email'} placeholder="Email" className='input' onChange={((e) => setEmail(e.target.value))} /><br></br>
-
-
                             <input type={'password'} placeholder="Password" className='input' onChange={((e) => setPassword(e.target.value))} /><br></br>
-
                             <button id='btn' onClick={login}>Sign In</button>
                             <span className='createAcc'>Dont have an Account?<br></br>
                                 <Link to="/sign-up">Create Account Here</Link>

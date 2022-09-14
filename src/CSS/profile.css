@@ -10,7 +10,7 @@
 .mainDiv :nth-child(1){
     margin: 0px;
     float: left;
-    background-color: white;
+    /* background-color: white; */
      border-top-right-radius:60%;
    border-bottom-right-radius:60%;
    /* background-image: url('../../public/admin.png');

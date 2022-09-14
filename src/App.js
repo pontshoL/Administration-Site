@@ -22,7 +22,7 @@ function App() {
            <Route  path='/add-room' element={<AddHotel/>}></Route>
            <Route  path='/update/:id' element={<UpdateHotel/>}></Route>
            <Route  path='/Bookings' element={<Bookings/>}></Route>
-           <Route  path='/profile' element={<AdminProfile/>}></Route>
+           {/* <Route  path='/profile' element={<AdminProfile/>}></Route> */}
          </Routes>
       </BrowserRouter>
     </div>

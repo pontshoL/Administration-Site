@@ -1,12 +1,12 @@
-.mainLogin{
+.mainSignUp{
     display: flex;
     /* justify-self: center; */
     height: 100vh;
     align-items: center;
     justify-content: center;
 }
-.formLogin{
-    width: 20%;
+.formSignUp{
+    width: 21%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,12 +14,12 @@
     align-items: center;
     background-color: black;
     border-radius: 60px;
-    height: 56%;
+    height: 61%;
     border: none;
     padding: 25px;
 }
-.formLogin>input{
-    width: 250px;
+.formSignUp>input{
+    width: 300px;
     height: 60px;
     background-color: cadetblue;
     border-radius: 60px;
@@ -27,12 +27,12 @@
     border: none;
     outline: none;
     padding-left: 15px;
-    margin-bottom: -18px;
+    margin-bottom: -10px;
     font-size: 19px;
-    padding: 15px;
+    margin: 5px;
 }
-.formLogin >button{
-    width: 250px;
+.formSignUp>button{
+    width: 300px;
     height: 60px;
     background-color: cadetblue;
     border-radius: 60px;
@@ -40,9 +40,9 @@
     border: none;
     outline: none;
     font-size: 19px;
-    margin-top: 8%;
+    margin: 6px;
 }
-.loginImge{
+.signImge{
     background-image: url('../../public/logo.jfif');
     background-size: cover;
     background-repeat: no-repeat;
@@ -50,15 +50,13 @@
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    
 }
 a{
     text-decoration: none;
     color: cadetblue;
-    font-size: 15px;
+    font-size: 18px;
 }
 .createAcc{
     background-color: black;
     color: white;
-    font-size: 15px;
 }

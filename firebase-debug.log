@@ -1,0 +1,30 @@
+[debug] [2022-09-07T09:21:16.564Z] ----------------------------------------------------------------------
+[debug] [2022-09-07T09:21:16.566Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\pontsho\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2022-09-07T09:21:16.566Z] CLI Version:   11.8.0
+[debug] [2022-09-07T09:21:16.566Z] Platform:      win32
+[debug] [2022-09-07T09:21:16.567Z] Node Version:  v16.16.0
+[debug] [2022-09-07T09:21:16.567Z] Time:          Wed Sep 07 2022 11:21:16 GMT+0200 (South Africa Standard Time)
+[debug] [2022-09-07T09:21:16.567Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-09-07T09:21:16.574Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-09-07T09:21:16.574Z] > authorizing via signed-in user (pontshol29@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\pontsho\Desktop\admin-app
+
+[debug] [2022-09-07T09:30:11.791Z] ----------------------------------------------------------------------
+[debug] [2022-09-07T09:30:11.793Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\pontsho\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2022-09-07T09:30:11.793Z] CLI Version:   11.8.0
+[debug] [2022-09-07T09:30:11.793Z] Platform:      win32
+[debug] [2022-09-07T09:30:11.794Z] Node Version:  v16.16.0
+[debug] [2022-09-07T09:30:11.794Z] Time:          Wed Sep 07 2022 11:30:11 GMT+0200 (South Africa Standard Time)
+[debug] [2022-09-07T09:30:11.794Z] ----------------------------------------------------------------------
+[debug] 
+[info] Already logged in as pontshol29@gmail.com

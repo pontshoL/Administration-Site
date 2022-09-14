@@ -20,28 +20,15 @@ function AddHotel() {
     const addHotelRef = collection(db, 'hotel')
     const navigate = useNavigate()
 
-
-    
-    const [form, setForm] = useState({
-                                                                            
+    const [form, setForm] = useState({                                                                     
         image: "",
-
     });
 
-    
-    
-
-const handleImage = (e) => {
-
-  
+    const handleImage = (e) => {
         setForm( {...form,image:e.target.files[0]})
- 
-   
-  };
+     };
 
   
-
-
 const addHotel = () => {
     const storageRef = ref(
         storage,
@@ -100,12 +87,7 @@ const addHotel = () => {
 
 
     useEffect(() => {
-
-
-
         getData()
-
-
     }, [])
     // console.log("hotels", hotels);
 
@@ -128,7 +110,7 @@ const addHotel = () => {
   
     return (
         <div>
-            <div className='main2'>
+            <div className='mainAdd'>
               <Navbar bg="dark" variant="dark">
                 <Container className='container1'>
                   <Nav className="me-auto">
@@ -136,7 +118,6 @@ const addHotel = () => {
                       <Nav.Link href="home">Home</Nav.Link>
                     
                     <Nav.Link href="#Bookings">Bookings</Nav.Link>
-                    <Nav.Link href="#Contact">Contact</Nav.Link>
                     <div className='home'>
                     <Nav.Link href="#manage">Manage</Nav.Link>
                     </div>
@@ -146,14 +127,17 @@ const addHotel = () => {
             </div>
             <p className='heading'>HOTEL DETAILS</p>
 
-            <div className='form2'>
+            <div className='formAdd'>
+                <div className='inputs'>
                 <input className='hotelDetails' type="text" placeholder="Hotel Name" onChange={(e) => setHotelName(e.target.value)} /><br></br>
                 <input className='hotelDetails' type="text" placeholder="Location" onChange={(e) => setHotelLocation(e.target.value)} /><br></br>
                 <input className='hotelDetails' type="text" placeholder="Description" onChange={(e) => setHotelDescription(e.target.value)} /><br></br>
                 <input className='hotelDetails' type="text" placeholder="Alternative Description" onChange={(e) => setAltDesc(e.target.value)} /><br></br>
                 <input className='hotelDetails' type="number" placeholder="Amount" onChange={(e) => setHotelAmount(e.target.value)} /><br></br>
                 <input type="file"  accept="image/*" onChange={(e)=> {handleImage(e)}}/>
-                <button className='btnAdd' onClick={(e) => { addHotel() }}>ADD</button>
+                <button className='addButton' onClick={(e) => { addHotel() }}>ADD</button>
+                </div>
+                
             </div>
             {hotels.map((hotel,id) => (
                 <div className='output' key={id}>
